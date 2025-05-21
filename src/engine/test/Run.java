@@ -10,7 +10,9 @@ public class Run {
 	public static void main(String[] args) {
 		window.create();
 		
-		if(!window.closed()) {
+		//Why, the problem all along was I didn't a while loop. I put a if loop
+		//life is just so unfair and rigged
+		while(!window.closed()) {
 			if(window.isUpdating()) {
 				window.update();
 			}

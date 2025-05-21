@@ -77,4 +77,8 @@ public class Window {
 		}
 		return false;
 	}
+	
+	public double getFPS() {
+		return processedTime;
+	}
 }
