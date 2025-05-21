@@ -13,10 +13,11 @@ public class Window {
 	
 	private long window;
 	
-	public Window(int width, int height, String title) {
+	public Window(int width, int height, int fps,String title) {
 		this.width = width;
 		this.height = height;
 		this.title = title;
+		this.fps_cap = fps;
 	}
 	
 	public void create() {

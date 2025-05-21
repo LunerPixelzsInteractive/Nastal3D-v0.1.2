@@ -4,8 +4,8 @@ import engine.core.Window;
 
 public class Run {
 
-	public static final int WIDTH = 800, HEIGHT = 600;
-	public static Window window = new Window(WIDTH, HEIGHT, "v0.1");
+	public static final int WIDTH = 800, HEIGHT = 600, FPS = 60;
+	public static Window window = new Window(WIDTH, HEIGHT, FPS,"v0.1");
 	
 	public static void main(String[] args) {
 		window.create();
