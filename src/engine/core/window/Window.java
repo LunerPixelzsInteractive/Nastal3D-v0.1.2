@@ -1,4 +1,4 @@
-package engine.core;
+package engine.core.window;
 
 import java.nio.DoubleBuffer;
 
@@ -34,7 +34,7 @@ public class Window {
 	
 	public void create() {
 		
-		closed = false; //I want to cry TODO: Make the window stop closing-FIXED-
+		closed = false; //I want to cry TODO: Make the window stop closing-2/22/25 Fixed
 		
 		if(!GLFW.glfwInit()) {
 			System.err.println("GLFW can not init");
@@ -56,13 +56,13 @@ public class Window {
 		
 		time = getTime();
 	}
-	
+
 	public void update() {
 		for (int i = 0; i < GLFW.GLFW_KEY_LAST; i++) keys[i] = isKeyDown(i);
 		for (int i = 0; i < GLFW.GLFW_MOUSE_BUTTON_LAST; i++) mouseButtons[i] = isMouseDown(i);
 		GL11.glClearColor(backgroundColor.x, backgroundColor.y, backgroundColor.z, 1.0f);
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
-		
+
 		GLFW.glfwPollEvents();
 		GLFW.glfwSwapBuffers(window);
 	}
