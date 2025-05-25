@@ -10,13 +10,13 @@ public class Main implements Application{
 	
 	public static void main(String[] args) {
 		Main main = new Main();
-		Engine eng = new Engine(title, WIDTH, HEIGHT, FPS, main);
+		Engine eng = new Engine(title, WIDTH, HEIGHT, FPS, main); // (title, width, height, frames per second, application)
 		eng.start();
 	}
 	
 	@Override
 	public void init(Window window) {
-		window.setBackgroundColor(1.0f, 0.0f, 0.0f);
+		window.setBackgroundColor(0.0f, 0.0f, 1.0f);
 	}
 
 	@Override
