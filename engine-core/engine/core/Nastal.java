@@ -1,16 +1,17 @@
 package engine.core;
 
+import engine.core.app.Application;
 import engine.core.render.Render;
 import engine.core.scene.Scene;
 import engine.core.window.Window;
 
-public class Engine {
+public class Nastal {
 	private final Window window;
 	private Render render;
 	private Scene scene;
 	private Application app;
 	
-	public Engine(String title, int width, int height, int fps, Application app) {
+	public Nastal(String title, int width, int height, int fps, Application app) {
 		this.app = app;
 		window = new Window(width, height, fps, title);
 		render = new Render();

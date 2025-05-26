@@ -2,8 +2,8 @@ package game;
 
 import org.lwjgl.glfw.GLFW;
 
-import engine.core.Application;
-import engine.core.Engine;
+import engine.core.Nastal;
+import engine.core.app.Application;
 import engine.core.scene.Scene;
 import engine.core.window.Window;
 
@@ -13,8 +13,8 @@ public class Main implements Application{
 	
 	public static void main(String[] args) {
 		Main main = new Main();
-		Engine eng = new Engine(title, WIDTH, HEIGHT, FPS, main); // (title, width, height, frames per second, application)
-		eng.start();
+		Nastal nas = new Nastal(title, WIDTH, HEIGHT, FPS, main); // (title, width, height, frames per second, application)
+		nas.start();
 	}
 	
 	@Override

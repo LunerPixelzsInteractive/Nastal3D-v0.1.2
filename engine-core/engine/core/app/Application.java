@@ -1,4 +1,4 @@
-package engine.core;
+package engine.core.app;
 
 import engine.core.scene.Scene;
 import engine.core.window.Window;
