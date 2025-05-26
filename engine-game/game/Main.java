@@ -2,9 +2,12 @@ package game;
 
 import org.lwjgl.glfw.GLFW;
 
-import engine.core.Nastal;
+import engine.core.Mesh.Triangle;
+import engine.core.Mesh.Mesh;
 import engine.core.app.Application;
+import engine.core.render.Render;
 import engine.core.scene.Scene;
+import engine.core.utils.Nastal;
 import engine.core.window.Window;
 
 public class Main implements Application{
@@ -18,8 +21,12 @@ public class Main implements Application{
 	}
 	
 	@Override
-	public void init(Window window, Scene scene) {
-		window.setBackgroundColor(0.0f, 0.0f, 1.0f);
+	public void init(Window window, Scene scene, Render render) {
+		window.setBackgroundColor(1.0f, 0.3f, 0.1f);
+		
+		Triangle tri = new Triangle();
+		Mesh triangle = new Mesh(tri.getPositions(), 3);
+		scene.addMesh("triangle", triangle);
 	}
 
 	@Override

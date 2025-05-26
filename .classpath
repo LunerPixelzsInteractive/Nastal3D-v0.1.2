@@ -8,6 +8,7 @@
 	<classpathentry kind="src" path="engine-game"/>
 	<classpathentry kind="src" path="engine-core"/>
 	<classpathentry kind="src" path="engine-editor"/>
+	<classpathentry kind="src" path="engine-resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/LWJGL3"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Nastal3D"/>
 	<classpathentry kind="output" path="bin"/>

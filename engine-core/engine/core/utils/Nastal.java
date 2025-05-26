@@ -1,4 +1,4 @@
-package engine.core;
+package engine.core.utils;
 
 import engine.core.app.Application;
 import engine.core.render.Render;
@@ -14,19 +14,23 @@ public class Nastal {
 	public Nastal(String title, int width, int height, int fps, Application app) {
 		this.app = app;
 		window = new Window(width, height, fps, title);
-		render = new Render();
-		scene = new Scene();
-		app.init(window, scene);
 	}
 	
 	public void start() {
 		window.create();
+		
+		render = new Render();
+		scene = new Scene();
+		app.init(window, scene, render);
 		
 		while(!window.closed()) {
 			if(window.isUpdating()) {
 				window.update();
 				
 				app.update(window, scene);
+				
+				render.render(window, scene);
+				window.swapBuffers();
 			}
 		}
 		this.cleanup();

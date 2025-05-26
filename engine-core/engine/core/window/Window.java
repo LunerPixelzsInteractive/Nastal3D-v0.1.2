@@ -64,7 +64,11 @@ public class Window {
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
 
 		GLFW.glfwPollEvents();
+	}
+	
+	public void swapBuffers() {
 		GLFW.glfwSwapBuffers(window);
+
 	}
 	
 	public double getTime() {
@@ -135,6 +139,14 @@ public class Window {
 		return processedTime;
 	}
 	
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
 	public void setBackgroundColor(float r, float g, float b) {
 		backgroundColor = new Vector3f(r, g, b);
 	}
