@@ -1,11 +1,12 @@
 package engine.core;
 
+import engine.core.scene.Scene;
 import engine.core.window.Window;
 
 public interface Application {
-	public void init(Window window);
+	public void init(Window window, Scene scene);
 	
-	public void update(Window window);
+	public void update(Window window, Scene scene);
 	
-	public void input(Window window);
+	public void input(Window window, Scene scene);
 }

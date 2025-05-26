@@ -1,7 +1,10 @@
 package game;
 
+import org.lwjgl.glfw.GLFW;
+
 import engine.core.Application;
 import engine.core.Engine;
+import engine.core.scene.Scene;
 import engine.core.window.Window;
 
 public class Main implements Application{
@@ -15,17 +18,17 @@ public class Main implements Application{
 	}
 	
 	@Override
-	public void init(Window window) {
+	public void init(Window window, Scene scene) {
 		window.setBackgroundColor(0.0f, 0.0f, 1.0f);
 	}
 
 	@Override
-	public void update(Window window) {
-		
+	public void update(Window window, Scene scene) {
+		if (window.isKeyPressed(GLFW.GLFW_KEY_V)) System.out.println("Engine Version: v0.1.3");
 	}
 
 	@Override
-	public void input(Window window) {
+	public void input(Window window, Scene scene) {
 		
 	}
 

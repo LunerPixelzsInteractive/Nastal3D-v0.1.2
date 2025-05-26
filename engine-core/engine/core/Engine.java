@@ -1,13 +1,21 @@
 package engine.core;
 
+import engine.core.render.Render;
+import engine.core.scene.Scene;
 import engine.core.window.Window;
 
 public class Engine {
-	public final Window window;
+	private final Window window;
+	private Render render;
+	private Scene scene;
+	private Application app;
 	
 	public Engine(String title, int width, int height, int fps, Application app) {
+		this.app = app;
 		window = new Window(width, height, fps, title);
-		app.init(window);
+		render = new Render();
+		scene = new Scene();
+		app.init(window, scene);
 	}
 	
 	public void start() {
@@ -16,8 +24,16 @@ public class Engine {
 		while(!window.closed()) {
 			if(window.isUpdating()) {
 				window.update();
+				
+				app.update(window, scene);
 			}
 		}
+		this.cleanup();
+	}
+	
+	private void cleanup() {
 		window.stop();
+		render.cleanup();
+		scene.cleanup();
 	}
 }
